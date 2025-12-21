@@ -1,5 +1,5 @@
 plugins {
-    id 'dev.architectury.loom' version '1.7-SNAPSHOT' apply false
+    id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
 }
@@ -51,6 +51,10 @@ subprojects {
         modImplementation "maven.modrinth:midnightlib:${project.midnightlib_version}-fabric"
         modImplementation "maven.modrinth:jade:${project.jade_version}+fabric"
         modImplementation "maven.modrinth:easy-magic:v8.0.1-1.20.1-Fabric"
+        modImplementation "maven.modrinth:enchanting-infuser:${project.enchantment_infuser}"
+      //  modImplementation "maven.modrinth:quark:${project.quark_version}"
+      //  modImplementation "maven.modrinth:quark:${project.quark_version}"
+       // modImplementation "maven.modrinth:quark:${project.quark_version}"
         modLocalRuntime "curse.maven:puzzles-lib-495476:5904751"
         modLocalRuntime "curse.maven:forge-config-api-port-fabric-547434:5902421"
     }

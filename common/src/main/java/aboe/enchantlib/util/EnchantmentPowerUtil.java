@@ -26,11 +26,6 @@ public class EnchantmentPowerUtil {
     public static boolean canBlockPath(World world, BlockPos pos, obstructionType obType) {
         if (enableAllowList && allowList.contains(Objects.requireNonNull(world.getBlockState(pos).getBlock().arch$registryName()).toString())) return false;
         if (enableDenyList && denyList.contains(Objects.requireNonNull(world.getBlockState(pos).getBlock().arch$registryName()).toString())) return true;
-//        if (!allowList.isEmpty()){
-//            System.out.println("List [0]: " + allowList.get(0));
-//            System.out.println("Block: " + world.getBlockState(pos).getBlock().arch$registryName());
-//            System.out.println("is same block:" + allowList.contains(world.getBlockState(pos).getBlock().arch$registryName()));
-//        }
 
         if (obType == obstructionType.SOLID)
             return world.getBlockState(pos).isFullCube(world, pos);

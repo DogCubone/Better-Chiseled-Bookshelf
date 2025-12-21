@@ -2,16 +2,21 @@
   "enchantlib.midnightconfig.title": "Better Chiseled Bookshelf Config",
   "enchantlib.midnightconfig.category.bookpower": "Book Power Config",
   "enchantlib.midnightconfig.category.table": "Table Configs",
-  "enchantlib.midnightconfig.category.tablesize": "Table Size Configs",
   "enchantlib.midnightconfig.category.redstone": "Redstone Configs",
 
   "enchantlib.midnightconfig.modifyRedstoneOutput": "Modify Chiseled Bookshelf Redstone output",
   "enchantlib.midnightconfig.modifyRedstoneOutput.tooltip": "If enable, the redstone output will be in pair with the amount of books in the shelf.",
 
-  "enchantlib.midnightconfig.normalBookPowerOutput": "Normal Book Redstone Power\nOnly works if Modify Redstone output is selected",
+  "enchantlib.midnightconfig.normalBookPowerOutput": "Normal Book Redstone Power",
   "enchantlib.midnightconfig.normalBookPowerOutput.tooltip": "How much power each book should give",
 
-  "enchantlib.midnightconfig.enchantedBookPowerOutput": "Enchanted Book Redstone Power\nOnly works if Modify Redstone output is selected",
+  "enchantlib.midnightconfig.powerLevelIsRedstoneOutput": "Enchantment Level Affects Power",
+  "enchantlib.midnightconfig.powerLevelIsRedstoneOutput.tooltip": "For example, a level 5 enchantment gives 5 of power.",
+
+  "enchantlib.midnightconfig.getAllEnchantmentsRedstone": "Get All Enchantments in the Book",
+  "enchantlib.midnightconfig.getAllEnchantmentsRedstone.tooltip": "If should get all the enchantments in books with multiple enchantments",
+
+  "enchantlib.midnightconfig.enchantedBookPowerOutput": "Enchanted Book Redstone Power",
   "enchantlib.midnightconfig.enchantedBookPowerOutput.tooltip": "How much power each enchanted book should give",
 
   "enchantlib.midnightconfig.particleChance": "Particle Spawn Chance",
@@ -36,15 +41,15 @@
   "enchantlib.midnightconfig.enum.obstructionType.DEFAULT": "DEFAULT",
   "enchantlib.midnightconfig.enum.obstructionType.SOLID": "FULL BLOCK",
   "enchantlib.midnightconfig.enum.obstructionType.NONE": "NONE",
-  "enchantlib.midnightconfig.obType.tooltip": "Determines what type of blocks will block the shelf power",
+  "enchantlib.midnightconfig.obType.tooltip": "Determines what type of blocks will interrupt the shelf power",
 
-  "enchantlib.midnightconfig.XZSize": "Maximum Shelf Distance\nOnly works if custom is selected",
+  "enchantlib.midnightconfig.XZSize": "Maximum Shelf Distance",
   "enchantlib.midnightconfig.XZSize.tooltip": "Determines how much to each side the table should search for shelves",
 
-  "enchantlib.midnightconfig.YSize": "Maximum Shelf Height\nOnly works if custom is selected",
+  "enchantlib.midnightconfig.YSize": "Maximum Shelf Height",
   "enchantlib.midnightconfig.YSize.tooltip": "Determines how high up the table should search for shelves",
 
-  "enchantlib.midnightconfig.yGoesDown": "Should Get Shelves Below\nSame value as Shelf Height, only works if custom is selected",
+  "enchantlib.midnightconfig.yGoesDown": "Should Get Shelves Below",
   "enchantlib.midnightconfig.yGoesDown.tooltip": "If enable, the table will get shelves belows its Y coordinate.",
 
   "enchantlib.midnightconfig.getMoreShelves": "Get Shelves Behind Shelves",
@@ -54,11 +59,41 @@
   "enchantlib.midnightconfig.disableLogging.tooltip": "Disables the performance warning for tables bigger than 15+",
 
   "enchantlib.midnightconfig.normalBookPower": "Normal Book Power",
-  "enchantlib.midnightconfig.enchantedBookPower": "Enchanted Book Power\nOnly works if Multiply Normal book is not selected",
+  "enchantlib.midnightconfig.enchantedBookPower": "Enchanted Book Power",
 
   "enchantlib.midnightconfig.multiplyNormalBook": "Multiply Normal Book Power For Enchanted Book",
   "enchantlib.midnightconfig.multiplyNormalBook.tooltip": "If the enchanted book power should be the normal book but multiplied by some value",
-  "enchantlib.midnightconfig.multiplier": "Enchanted Book Power Multiplier\nOnly works if Multiply Normal Book is selected",
+  "enchantlib.midnightconfig.multiplier": "Enchanted Book Power Multiplier",
+
+  "enchantlib.midnightconfig.enchantedBookPowerType": "Enchanted Book Power Type",
+
+  "enchantlib.midnightconfig.enum.bookPowerType.MULTIPLY_BY": "MULTIPLY BY LEVEL",
+  "enchantlib.midnightconfig.enum.bookPowerType.LEVEL_MULTIPLY": "CUSTOM LEVEL MULTIPLY",
+  "enchantlib.midnightconfig.enum.bookPowerType.LEVEL_ADD": "CUSTOM LEVEL ADD",
+  "enchantlib.midnightconfig.enum.bookPowerType.ADD_PER_LEVEL": "ADD PER LEVEL",
+
+  "enchantlib.midnightconfig.addLevel1": "Level 1",
+  "enchantlib.midnightconfig.addLevel2": "Level 2",
+  "enchantlib.midnightconfig.addLevel3": "Level 3",
+  "enchantlib.midnightconfig.addLevel4": "Level 4",
+  "enchantlib.midnightconfig.addLevel5": "Level 5 and above",
+
+  "enchantlib.midnightconfig.mulLevel1": "Level 1",
+  "enchantlib.midnightconfig.mulLevel2": "Level 2",
+  "enchantlib.midnightconfig.mulLevel3": "Level 3",
+  "enchantlib.midnightconfig.mulLevel4": "Level 4",
+  "enchantlib.midnightconfig.mulLevel5": "Level 5 and above",
+
+  "enchantlib.midnightconfig.customLevel1": "Level 1",
+  "enchantlib.midnightconfig.customLevel2": "Level 2",
+  "enchantlib.midnightconfig.customLevel3": "Level 3",
+  "enchantlib.midnightconfig.customLevel4": "Level 4",
+  "enchantlib.midnightconfig.customLevel5": "Level 5 and above",
+
+  "enchantlib.midnightconfig.levelAdd": "Value to Add per Level",
+
+  "enchantlib.midnightconfig.getAllEnchantments": "Get All Enchantments in the Book",
+  "enchantlib.midnightconfig.getAllEnchantments.tooltip": "If should get all the enchantments in books with multiple enchantments",
 
   "config.jade.plugin_enchantlib.enchantment_power": "Entity Power Provider",
   "enchantlib.ench_power": "Ench Power: %s"

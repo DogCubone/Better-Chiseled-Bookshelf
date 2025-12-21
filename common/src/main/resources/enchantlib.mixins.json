@@ -10,6 +10,7 @@
     "ChiseledBookShelfEntityMixin",
     "ChiseledBookShelfMixin",
     "EasyMagicCompMixin",
+    "EnchantInfuserMixin",
     "EnchantmentScreenHandlerMixin",
     "EnchantmentTableMixin",
     "TotalEnchantPowerJadeMixin"

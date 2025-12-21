@@ -13,8 +13,10 @@ public class mixinLoader implements IMixinConfigPlugin
     @Override
     public boolean shouldApplyMixin(String s, String mixinClassName) {
         if (Platform.isFabric()){
-            if ("aboe.enchantlib.mixin.EasyMagicComp".equals(mixinClassName))
+            if ("aboe.enchantlib.mixin.EasyMagicCompMixin".equals(mixinClassName))
                 return Platform.isModLoaded("easymagic");
+            if ("aboe.enchantlib.mixin.EnchantInfuser".equals(mixinClassName))
+                return Platform.isModLoaded("enchantinginfuser");
        }
         return true;
     }
