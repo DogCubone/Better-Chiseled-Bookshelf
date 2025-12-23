@@ -59,11 +59,11 @@
   "enchantlib.midnightconfig.disableLogging.tooltip": "Disables the performance warning for tables bigger than 15+",
 
   "enchantlib.midnightconfig.normalBookPower": "Normal Book Power",
-  "enchantlib.midnightconfig.enchantedBookPower": "Enchanted Book Power",
+  "enchantlib.midnightconfig.enchantedBookPower": "Add",
 
   "enchantlib.midnightconfig.multiplyNormalBook": "Multiply Normal Book Power For Enchanted Book",
   "enchantlib.midnightconfig.multiplyNormalBook.tooltip": "If the enchanted book power should be the normal book but multiplied by some value",
-  "enchantlib.midnightconfig.multiplier": "Enchanted Book Power Multiplier",
+  "enchantlib.midnightconfig.multiplier": "Multiplier",
 
   "enchantlib.midnightconfig.enchantedBookPowerType": "Enchanted Book Power Type",
 

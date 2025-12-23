@@ -1,7 +1,5 @@
 package aboe.enchantlib.config;
 
-import net.minecraft.item.ItemStack;
-import net.minecraft.item.Items;
 import net.minecraft.util.math.BlockPos;
 
 import java.util.List;
@@ -34,8 +32,11 @@ public class ConfigGetter {
                 float returnValue = (level <= 5) ? valuesArray[level-1] : valuesArray[4];
 
                 if (returnValue == 0){
-                    returnValue = level+1;
+                    returnValue = level;
+                } else if (returnValue < 0){
+                    returnValue = level + Math.abs(returnValue);
                 }
+
                 return normalBookPower * returnValue;
             }
             case CUSTOM -> {

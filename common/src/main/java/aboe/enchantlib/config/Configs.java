@@ -1,6 +1,7 @@
 package aboe.enchantlib.config;
 
 import eu.midnightdust.lib.config.MidnightConfig;
+import net.minecraft.util.Identifier;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,10 +22,10 @@ public class Configs extends MidnightConfig {
     @Entry(category = TABLE) public static obstructionType obType = obstructionType.SOLID;
     @Entry(category = TABLE) public static boolean enableAllowList = false;
     @Condition(requiredOption = "enchantlib:enableAllowList")
-    @Entry(category = TABLE) public static List<String> allowList = new ArrayList<>();
+    @Entry(category = TABLE) public static List<Identifier> allowList = new ArrayList<>();
     @Entry(category = TABLE) public static boolean enableDenyList = false;
     @Condition(requiredOption = "enchantlib:enableDenyList")
-    @Entry(category = TABLE) public static List<String> denyList = new ArrayList<>();
+    @Entry(category = TABLE) public static List<Identifier> denyList = new ArrayList<>();
     //endregion path search
 
     // region Table Settings
@@ -52,6 +53,7 @@ public class Configs extends MidnightConfig {
     @Condition(requiredOption = "enchantlib:powerLevelIsRedstoneOutput", requiredValue = "false")
     @Entry(category = REDSTONE, max = 15) public static int enchantedBookPowerOutput = 2;
     @Condition(requiredOption = "enchantlib:modifyRedstoneOutput")
+    @Condition(requiredOption = "enchantlib:powerLevelIsRedstoneOutput")
     @Entry(category = REDSTONE) public static boolean getAllEnchantmentsRedstone = false;
     //endregion
 
@@ -77,7 +79,6 @@ public class Configs extends MidnightConfig {
     @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "ADD_PER_LEVEL")
     @Entry(category = BOOKPOWER) public static float levelAdd = 0.1666666666666667f;
 
-
     @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_ADD")
     @Entry(category = BOOKPOWER) public static float addLevel1 = 0.1666666666666667f;
     @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_ADD")
@@ -98,7 +99,7 @@ public class Configs extends MidnightConfig {
     @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_MULTIPLY")
     @Entry(category = BOOKPOWER) public static float mulLevel4 = 5;
     @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_MULTIPLY")
-    @Entry(category = BOOKPOWER) public static float mulLevel5 = 6;
+    @Entry(category = BOOKPOWER, min = -100) public static float mulLevel5 = 6;
 
     @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "CUSTOM")
     @Entry(category = BOOKPOWER) public static float customLevel1 = 0.2f;

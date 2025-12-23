@@ -33,7 +33,10 @@ configurations {
 dependencies {
     forge "net.minecraftforge:forge:$rootProject.forge_version"
 
+
     modImplementation "dev.architectury:architectury-forge:$rootProject.architectury_api_version"
+    modImplementation "maven.modrinth:easy-magic:${project.easy_magic_version}-Forge"
+    modImplementation "maven.modrinth:enchanting-infuser:${project.enchantment_infuser}-Forge"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionForge')

@@ -49,21 +49,22 @@ public abstract class ChiseledBookShelfMixin extends BlockWithEntity implements 
     }
 
     private int getEnchantedBookRedstonePower(ItemStack stack) {
-        NbtCompound nbtCompound = stack.getNbt();
-        NbtList enchantmentList = nbtCompound != null ? nbtCompound.getList("StoredEnchantments", 10) : new NbtList();
+        if (getAllEnchantmentsRedstone || powerLevelIsRedstoneOutput) {
+            NbtCompound nbtCompound = stack.getNbt();
+            NbtList enchantmentList = nbtCompound != null ? nbtCompound.getList("StoredEnchantments", 10) : new NbtList();
 
-        if (getAllEnchantmentsRedstone) {
-            int power = 0;
+            if (getAllEnchantmentsRedstone) {
+                int power = 0;
 
-            for (int i = 0; i < enchantmentList.size(); i++) {
-                power += (powerLevelIsRedstoneOutput) ? EnchantmentHelper.getLevelFromNbt(enchantmentList.getCompound(i)) : enchantedBookPowerOutput;
+                for (int i = 0; i < enchantmentList.size(); i++) {
+                    power += (powerLevelIsRedstoneOutput) ? EnchantmentHelper.getLevelFromNbt(enchantmentList.getCompound(i)) : enchantedBookPowerOutput;
+                }
+
+                return power;
             }
 
-            return power;
-        }
-
-        if (powerLevelIsRedstoneOutput)
             return getHighestEnchantmentLevel(enchantmentList);
+        }
 
         return enchantedBookPowerOutput;
     }

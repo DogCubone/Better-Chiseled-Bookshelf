@@ -28,7 +28,7 @@ import static aboe.enchantlib.util.EnchantmentPowerUtil.getPowerProvidersInArea;
 public abstract class EnchantmentTableMixin extends BlockWithEntity {
     @Unique
     private static short tickUntilPerformanceUpdate = 0;
-    private int tickUntilRenderUpdate = 0;
+    private int ticksUntilRenderUpdate = 0;
     public List<BlockPos> validProvidersInArea = new ArrayList<>();
 
     protected EnchantmentTableMixin(Settings arg) {
@@ -40,10 +40,10 @@ public abstract class EnchantmentTableMixin extends BlockWithEntity {
         super.randomDisplayTick(state, world, pos, random);
 
 //       This is just to try to avoid some massive lag that happens if your table size is too big. It sure doesn't eliminate it, but makes it a little more bearable
-        if (tickUntilRenderUpdate <= 0) {
+        if (ticksUntilRenderUpdate <= 0) {
             validProvidersInArea = getPowerProvidersInArea(world, pos, ConfigGetter.getTableSize(), obType, getMoreShelves);
-            tickUntilRenderUpdate = 10;
-        } else --tickUntilRenderUpdate;
+            ticksUntilRenderUpdate = 10;
+        } else --ticksUntilRenderUpdate;
 
         if (!disableLogging) echantlib$performanceWarning();
 

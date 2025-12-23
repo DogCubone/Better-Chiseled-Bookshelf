@@ -29,7 +29,6 @@ public class EnchantInfuserMixin {
     private void getEnchantingPower(World world, BlockPos pos, CallbackInfoReturnable<Integer> cir) {
         if (XZSize > 15) EnchantLib.logger.warn("Enchantment Table is set to a size of: " + XZSize + ". Performance might be hurt!");
         float enchantingPower = 0;
-        float chiseledBookshelvesPower = 0;
 
         float maxPowerScale = 1.0f;
 
@@ -37,13 +36,13 @@ public class EnchantInfuserMixin {
             BlockState state = world.getBlockState(pos.add(offset));
 
             if (state.getBlock() instanceof IEnchantmentPowerProvider provider)
-                chiseledBookshelvesPower += provider.getEnchantmentPower(world, pos.add(offset), state);
+                enchantingPower += provider.getEnchantmentPower(world, pos.add(offset), state);
             else
                 enchantingPower += EnchantingInfuserAPI.getEnchantStatsProvider().getEnchantPowerBonus(state, world, pos.add(offset));
 
             maxPowerScale = Math.max(maxPowerScale, EnchantingInfuserAPI.getEnchantStatsProvider().getMaximumEnchantPowerScale(state, world, pos.add(offset)));
         }
 
-        cir.setReturnValue((int) Math.min(Math.max(0.0F, enchantingPower + chiseledBookshelvesPower), config.maximumBookshelves * maxPowerScale));
+        cir.setReturnValue((int) Math.min(Math.max(0.0F, enchantingPower), config.maximumBookshelves * maxPowerScale));
     }
 }
