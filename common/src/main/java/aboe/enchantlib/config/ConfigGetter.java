@@ -21,7 +21,7 @@ public class ConfigGetter {
     public static float getEnchantedBookPower(int level) {
         switch (enchantedBookPowerType){
             case ADD -> {
-                return enchantedBookPower;
+                return normalBookPower + enchantedBookPower;
             }
             case LEVEL_ADD -> {
                 updateArrayToAdd();
