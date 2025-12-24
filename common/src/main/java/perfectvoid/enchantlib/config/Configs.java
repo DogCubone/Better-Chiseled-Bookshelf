@@ -49,16 +49,70 @@ public class Configs extends MidnightConfig {
     @Condition(requiredOption = "enchantlib:modifyRedstoneOutput")
     @Entry(category = REDSTONE, max = 15) public static int normalBookPowerOutput = 1;
     @Condition(requiredOption = "enchantlib:modifyRedstoneOutput")
+    @Entry(category = REDSTONE) public static boolean powerLevelIsRedstoneOutput = true;
+    @Condition(requiredOption = "enchantlib:powerLevelIsRedstoneOutput", requiredValue = "false")
     @Entry(category = REDSTONE, max = 15) public static int enchantedBookPowerOutput = 2;
+    @Condition(requiredOption = "enchantlib:modifyRedstoneOutput")
+    @Condition(requiredOption = "enchantlib:powerLevelIsRedstoneOutput")
+    @Entry(category = REDSTONE) public static boolean getAllEnchantmentsRedstone = false;
     //endregion
 
     //region Book Power
+    public enum bookPowerType {
+        MULTIPLY,
+        MULTIPLY_BY,
+        LEVEL_MULTIPLY,
+        ADD,
+        LEVEL_ADD,
+        ADD_PER_LEVEL,
+        CUSTOM
+    }
     @Entry(category = BOOKPOWER) public static float normalBookPower = 0.1666666666666667f; //Default power for normal books. its 0.1666666666666667f since it is 1 if multiplied by 6.
-    @Entry(category = BOOKPOWER) public static boolean multiplyNormalBook = true;
-    @Condition(requiredOption = "enchantlib:multiplyNormalBook", requiredValue = "false")
-    @Entry(category = BOOKPOWER) public static float enchantedBookPower = 0.3333333333333334f; //Default power is 2x normal books.
+    //@Entry(category = BOOKPOWER) public static boolean multiplyNormalBook = true;
+    //  @Condition(requiredOption = "enchantlib:multiplyNormalBook", requiredValue = "false")
+    @Entry(category = BOOKPOWER) public  static bookPowerType enchantedBookPowerType = bookPowerType.MULTIPLY;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "ADD")
+    @Entry(category = BOOKPOWER) public static float enchantedBookPower = 0.1666666666666667f; //Default power is 2x normal books.
 
-    @Condition(requiredOption = "enchantlib:multiplyNormalBook")
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "MULTIPLY")
     @Entry(category = BOOKPOWER, min=1) public static float multiplier = 2;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "ADD_PER_LEVEL")
+    @Entry(category = BOOKPOWER) public static float levelAdd = 0.1666666666666667f;
+
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_ADD")
+    @Entry(category = BOOKPOWER) public static float addLevel1 = 0.1666666666666667f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_ADD")
+    @Entry(category = BOOKPOWER) public static float addLevel2 = 0.3333333333333334f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_ADD")
+    @Entry(category = BOOKPOWER) public static float addLevel3 = 0.5000000000000001f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_ADD")
+    @Entry(category = BOOKPOWER) public static float addLevel4 = 0.6666666666666668f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_ADD")
+    @Entry(category = BOOKPOWER) public static float addLevel5 = 0.8333333333333335f;
+
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_MULTIPLY")
+    @Entry(category = BOOKPOWER) public static float mulLevel1 = 2;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_MULTIPLY")
+    @Entry(category = BOOKPOWER) public static float mulLevel2 = 3;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_MULTIPLY")
+    @Entry(category = BOOKPOWER) public static float mulLevel3 = 4;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_MULTIPLY")
+    @Entry(category = BOOKPOWER) public static float mulLevel4 = 5;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "LEVEL_MULTIPLY")
+    @Entry(category = BOOKPOWER, min = -100) public static float mulLevel5 = 6;
+
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "CUSTOM")
+    @Entry(category = BOOKPOWER) public static float customLevel1 = 0.2f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "CUSTOM")
+    @Entry(category = BOOKPOWER) public static float customLevel2 = 0.4f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "CUSTOM")
+    @Entry(category = BOOKPOWER) public static float customLevel3 = 0.6f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "CUSTOM")
+    @Entry(category = BOOKPOWER) public static float customLevel4 = 0.8f;
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = "CUSTOM")
+    @Entry(category = BOOKPOWER) public static float customLevel5 = 0.9f;
+
+    @Condition(requiredOption = "enchantedBookPowerType", requiredValue = { "CUSTOM", "LEVEL_MULTIPLY", "LEVEL_ADD", "MULTIPLY_BY", "ADD_PER_LEVEL" })
+    @Entry(category = BOOKPOWER) public static boolean getAllEnchantments = false;
     //endregion
 }

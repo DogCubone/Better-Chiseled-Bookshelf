@@ -1,5 +1,5 @@
 plugins {
-    id 'dev.architectury.loom' version '1.10-SNAPSHOT' apply false
+    id 'dev.architectury.loom' version '1.13-SNAPSHOT' apply false
     id 'architectury-plugin' version '3.4-SNAPSHOT'
     id 'com.github.johnrengelman.shadow' version '8.1.1' apply false
 }
@@ -34,9 +34,10 @@ subprojects {
         minecraft "net.minecraft:minecraft:$rootProject.minecraft_version"
         modImplementation ("maven.modrinth:midnightlib:${project.midnightlib_version}-fabric")
         modImplementation "maven.modrinth:jade:${project.jade_version}+fabric"
-        modImplementation "maven.modrinth:easy-magic:v21.0.4-1.21-Fabric"
-      //  modLocalRuntime "maven.modrinth:puzzles-lib:v21.0.8-1.21-Fabric"
-      //  modLocalRuntime "maven.modrinth:forge-config-api-port:v21.0.8-1.21-Fabric"
+        modImplementation "maven.modrinth:easy-magic:${project.easy_magic_version}-Fabric"
+        modImplementation "maven.modrinth:enchanting-infuser:${project.enchantment_infuser_version}-Fabric"
+     //   modLocalRuntime "maven.modrinth:puzzles-lib:v21.5.13-1.21.5-Fabric"
+     //   modLocalRuntime "maven.modrinth:forge-config-api-port:v21.5.3-1.21.5-Fabric"
 
         mappings loom.layered {
             it.mappings("net.fabricmc:yarn:$rootProject.yarn_mappings:v2")

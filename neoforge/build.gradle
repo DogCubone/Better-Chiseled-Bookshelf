@@ -36,7 +36,8 @@ dependencies {
 
     modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
     modImplementation "maven.modrinth:midnightlib:${project.midnightlib_version}-neoforge"
-    modImplementation "maven.modrinth:easy-magic:v21.0.4-1.21-NeoForge"
+    modImplementation "maven.modrinth:easy-magic:${project.easy_magic_version}-NeoForge"
+    modImplementation "maven.modrinth:enchanting-infuser:${project.enchantment_infuser_version}-NeoForge"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
